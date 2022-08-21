@@ -25,17 +25,17 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "https://i.pinimg.com/736x/ba/f7/05/baf70514efce04ea8ea12f25d50452de--white-shirts-fashion-women.jpg",
     title: "SHIRT STYLE!",
   },
   {
     id: 2,
-    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "https://i.pinimg.com/originals/e4/84/4f/e4844fa733828e57bf56674d0bc83a55.jpg",
     title: "LOUNGEWEAR LOVE",
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    img: "https://alimentola.info/uploads/posts/2021-09/1632013121_19-alimentola-info-p-tonkie-kurtki-yuniklo-devushka-krasivo-fot-19.jpg",
     title: "LIGHT JACKETS",
   },
 ];
