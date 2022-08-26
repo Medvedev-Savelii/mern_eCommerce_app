@@ -65,7 +65,7 @@ const ProductList = () => {
             <Option>red</Option>
             <Option>blue</Option>
             <Option>yellow</Option>
-            <Option>green</Option>
+            <Option>gray</Option>
           </Select>
           <Select name='size' onChange={handleFilters}>
             <Option disabled>Size</Option>
