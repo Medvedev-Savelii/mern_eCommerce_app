@@ -156,9 +156,11 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
-const KEY = process.env.REACT_APP_STRIPE;
 
 const Cart = () => {
+  const KEY =
+    "pk_test_51LaG1uDZXoQdYPn28q3eNM8bPkvAKbSwMT5YEaR7pYlvhke8IODBCJCiNYaT7Cub04im88yA28cJ3Upsftgo53bB007UsxjZS0";
+  console.log(KEY);
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();

@@ -1,10 +1,11 @@
 import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { logout } from "../redux/userRedux";
 
 const Container = styled.div`
   height: 60px;
@@ -70,7 +71,11 @@ const MenuItem = styled.div`
 
 const Navbar = () => {
   const cart = useSelector((state) => state.cart);
-
+  const user = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <Container>
       <Wrapper>
@@ -87,20 +92,30 @@ const Navbar = () => {
           </Link>
         </Center>
         <Right>
-          <Link
-            to='/register'
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            {" "}
-            <MenuItem>REGISTER</MenuItem>
-          </Link>
-          <Link
-            to='/login'
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            {" "}
-            <MenuItem>SIGN IN</MenuItem>
-          </Link>
+          {user ? (
+            <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
+              {" "}
+              <MenuItem onClick={handleLogout}>LOGOUT</MenuItem>
+            </Link>
+          ) : (
+            <>
+              <Link
+                to='/register'
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {" "}
+                <MenuItem>REGISTER</MenuItem>
+              </Link>
+              <Link
+                to='/login'
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {" "}
+                <MenuItem>SIGN IN</MenuItem>
+              </Link>
+            </>
+          )}
+
           <Link to='/cart'>
             <MenuItem>
               <Badge badgeContent={cart.quantity} color='primary'>
